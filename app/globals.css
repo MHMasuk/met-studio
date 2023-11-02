@@ -19,9 +19,47 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+          to bottom,
+          transparent,
+          rgb(var(--background-end-rgb))
+  ) rgb(var(--background-start-rgb));
+}
+
+.custom-slider {
+  margin-bottom: -30px;
+
+  .rs-slider-handle {
+    top: -30px;
+    background-color: #000000;
+    text-align: center;
+    padding: 3px;
+    margin-left: -16px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out 0.5s;
+    position: relative;
+
+    /*&:hover {*/
+    /*    box-shadow: 0 0 0 8px rgba(52, 152, 255, 0.25);*/
+    /*}*/
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      top: 100%;
+      border-width: 8px;
+      border-style: solid;
+      border-color: #000000 transparent transparent transparent;
+    }
+  }
+
+  &.rs-slider-dragging .rs-slider-handle,
+  &.rs-slider-dragging .rs-slider-handle:hover {
+    box-shadow: none;
+    transform: scale(1.2);
+  }
 }
