@@ -546,7 +546,7 @@ const LayerMap = (props) => {
         }
 
         return () => clearInterval(intervalId); // Cleanup on component unmount
-    }, [isPlaying, currentStep]);
+    }, [isPlaying, currentStep, updateDataIndex]);
 
 
     // ----------- Marker logic Start -----------
