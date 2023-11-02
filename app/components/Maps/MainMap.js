@@ -71,8 +71,8 @@ const mainLayerData = [
 ]
 
 const MainMap = () => {
-    const [layerData, setLayerData] = useState(mainLayerData);
-    const [loading, setLoading] = useState(true);
+    // const [layerData, setLayerData] = useState(mainLayerData);
+    // const [loading, setLoading] = useState(true);
 
     const [selectedLayer, setSelectedLayer] = useState("colorMap");
 
@@ -93,7 +93,7 @@ const MainMap = () => {
         <div>
 
                 <LayerMap
-                    layerData={layerData}
+                    layerData={mainLayerData}
                     selectedLayer={selectedLayer}
                     setSelectedLayer={setSelectedLayer}
                 />
