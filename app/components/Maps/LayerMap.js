@@ -525,15 +525,15 @@ const LayerMap = (props) => {
     // };
 
     // Define the updateDataIndex function inside a useCallback hook
-    const updateDataIndex = useCallback(() => {
-        if (currentStep < dateTimeValues.length) {
-            setCurrentDataIndex(currentStep);
-            setValue(currentStep);
-            setCurrentStep(currentStep + 1);
-        } else {
-            setIsPlaying(false); // Stop playing when the last step is reached
-        }
-    }, [currentStep, dateTimeValues, setCurrentDataIndex, setValue, setIsPlaying]);
+    // const updateDataIndex = useCallback(() => {
+    //     if (currentStep < dateTimeValues.length) {
+    //         setCurrentDataIndex(currentStep);
+    //         setValue(currentStep);
+    //         setCurrentStep(currentStep + 1);
+    //     } else {
+    //         setIsPlaying(false); // Stop playing when the last step is reached
+    //     }
+    // }, [currentStep, dateTimeValues, setCurrentDataIndex, setValue, setIsPlaying]);
 
     // Toggle the "Play" button state
     const togglePlay = () => {
@@ -547,17 +547,17 @@ const LayerMap = (props) => {
     };
 
     // Use useEffect to start/stop the interval when isPlaying changes
-    useEffect(() => {
-        let intervalId;
-
-        if (isPlaying) {
-            intervalId = setInterval(updateDataIndex, 1000); // Change data every second (adjust as needed)
-        } else {
-            clearInterval(intervalId);
-        }
-
-        return () => clearInterval(intervalId); // Cleanup on component unmount
-    }, [isPlaying, currentStep, updateDataIndex]);
+    // useEffect(() => {
+    //     let intervalId;
+    //
+    //     if (isPlaying) {
+    //         intervalId = setInterval(updateDataIndex, 1000); // Change data every second (adjust as needed)
+    //     } else {
+    //         clearInterval(intervalId);
+    //     }
+    //
+    //     return () => clearInterval(intervalId); // Cleanup on component unmount
+    // }, [isPlaying, currentStep, updateDataIndex]);
 
 
     // ----------- Marker logic Start -----------
