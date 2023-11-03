@@ -370,24 +370,24 @@ const LayerMap = (props) => {
         '6:00 PM',
     ];
 
-    const dateTimeValues = dateRange.reduce((acc, date) => {
-        return acc.concat(timesPerDay.map(time => `${date} ${time}`));
-    }, []);
-
-    const dateTimeToValue = (dateTime) => {
-        return dateTimeValues.indexOf(dateTime);
-    };
-
-    const valueToDateTime = (value) => {
-        return dateTimeValues[value];
-    };
+    // const dateTimeValues = dateRange.reduce((acc, date) => {
+    //     return acc.concat(timesPerDay.map(time => `${date} ${time}`));
+    // }, []);
+    //
+    // const dateTimeToValue = (dateTime) => {
+    //     return dateTimeValues.indexOf(dateTime);
+    // };
+    //
+    // const valueToDateTime = (value) => {
+    //     return dateTimeValues[value];
+    // };
 
     // const [value, setValue] = useState(dateTimeToValue(dateTimeValues[currentDataIndex]));
-    const [value, setValue] = useState(dateTimeToValue(dateTimeValues[currentDataIndex]));
-
-    const customTooltip = (
-        valueToDateTime(value)
-    )
+    // const [value, setValue] = useState(dateTimeToValue(dateTimeValues[currentDataIndex]));
+    //
+    // const customTooltip = (
+    //     valueToDateTime(value)
+    // )
 
     const formatDate = (dateStr) => {
         const date = new Date(dateStr);
@@ -476,7 +476,7 @@ const LayerMap = (props) => {
     const oldlayers = [ColorBitMapLayer]
 
 
-    console.log("dateTimeToValue(dateTimeValues[0])", dateTimeToValue(dateTimeValues[0]))
+    // console.log("dateTimeToValue(dateTimeValues[0])", dateTimeToValue(dateTimeValues[0]))
 
     // ----------- Globe view and Map view Toggle Start -------------
     const [isMapView, setIsMapView] = useState(true);
