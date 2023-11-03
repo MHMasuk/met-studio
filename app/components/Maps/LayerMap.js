@@ -514,15 +514,26 @@ const LayerMap = (props) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     // Function to update the current data index and step
-    const updateDataIndex = () => {
+    // const updateDataIndex = () => {
+    //     if (currentStep < dateTimeValues.length) {
+    //         setCurrentDataIndex(currentStep);
+    //         setValue(currentStep)
+    //         setCurrentStep(currentStep + 1);
+    //     } else {
+    //         setIsPlaying(false); // Stop playing when the last step is reached
+    //     }
+    // };
+
+    // Define the updateDataIndex function inside a useCallback hook
+    const updateDataIndex = useCallback(() => {
         if (currentStep < dateTimeValues.length) {
             setCurrentDataIndex(currentStep);
-            setValue(currentStep)
+            setValue(currentStep);
             setCurrentStep(currentStep + 1);
         } else {
             setIsPlaying(false); // Stop playing when the last step is reached
         }
-    };
+    }, [currentStep, dateTimeValues, setCurrentDataIndex, setValue, setIsPlaying]);
 
     // Toggle the "Play" button state
     const togglePlay = () => {
