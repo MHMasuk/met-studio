@@ -718,39 +718,39 @@ const LayerMap = (props) => {
                             }
                         </IconButton>
                     </div>
-                    <div className="w-full">
-                        <Slider
-                            className="custom-slider"
-                            defaultValue={dateTimeToValue(dateTimeValues[0])}
-                            min={0}
-                            max={dateTimeValues.length - 1}
-                            step={1}
-                            progress
-                            handleStyle={{
-                                borderRadius: 5,
-                                color: '#fff',
-                                fontSize: 12,
-                                width: 130,
-                            }}
-                            handleTitle={customTooltip}
-                            tooltip={false}
-                            value={value}
-                            onChange={value => {
-                                console.log("slider value", value);
-                                setValue(value)
-                                setCurrentDataIndex(value)
-                            }}
-                        />
+                    {/*<div className="w-full">*/}
+                    {/*    <Slider*/}
+                    {/*        className="custom-slider"*/}
+                    {/*        defaultValue={dateTimeToValue(dateTimeValues[0])}*/}
+                    {/*        min={0}*/}
+                    {/*        max={dateTimeValues.length - 1}*/}
+                    {/*        step={1}*/}
+                    {/*        progress*/}
+                    {/*        handleStyle={{*/}
+                    {/*            borderRadius: 5,*/}
+                    {/*            color: '#fff',*/}
+                    {/*            fontSize: 12,*/}
+                    {/*            width: 130,*/}
+                    {/*        }}*/}
+                    {/*        handleTitle={customTooltip}*/}
+                    {/*        tooltip={false}*/}
+                    {/*        value={value}*/}
+                    {/*        onChange={value => {*/}
+                    {/*            console.log("slider value", value);*/}
+                    {/*            setValue(value)*/}
+                    {/*            setCurrentDataIndex(value)*/}
+                    {/*        }}*/}
+                    {/*    />*/}
 
-                        <div className="flex justify-between z-50">
-                            {dateRange.map((date, index) => (
-                                <div key={index} className="flex text-lg !font-thin"
-                                     style={{width: `${100 / (dateRange.length)}%`}}>|<span
-                                    className="text-xs items-center py-2 ml-2 text-black font-bold"> {formatDate(date)}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    {/*    <div className="flex justify-between z-50">*/}
+                    {/*        {dateRange.map((date, index) => (*/}
+                    {/*            <div key={index} className="flex text-lg !font-thin"*/}
+                    {/*                 style={{width: `${100 / (dateRange.length)}%`}}>|<span*/}
+                    {/*                className="text-xs items-center py-2 ml-2 text-black font-bold"> {formatDate(date)}</span>*/}
+                    {/*            </div>*/}
+                    {/*        ))}*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
             </div>
 
